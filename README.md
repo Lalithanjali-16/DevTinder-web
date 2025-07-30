@@ -13,3 +13,6 @@
 - Install Axios
 -CORS -install cors in backend =>add middleware to with configurations: origin ,withCredentials:true
 - Whenever you're making API call pass axios =>{withCredentials  true}
+- Install Redux Toolkit
+- Install react-redux + @reduxjs/toolkit => configureStore => Provider => createSlice => add reducer to store
+- NavBar should update avatar as soon as user logs in

@@ -18,3 +18,4 @@
 - NavBar should update avatar as soon as user logs in
 - You should not access other routes without login
 - If token is not present , redirect user to login page
+- Logout Feature

@@ -7,7 +7,20 @@ import { addRequests } from '../utils/requestSlice'
 const Requests = () => {
   const dispatch = useDispatch()
   const requests = useSelector((state) => state.requests)
-  console.log("Requests data:", requests)
+
+  const reviewRequest = async (status, _id) => {
+    try {
+      const res = await axios.post(
+        `${BASE_URL}/request/review/${status}/${_id}`,
+        {},
+        { withCredentials: true }
+      )
+      fetchRequests() 
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   const fetchRequests = async () => {
     try {
@@ -58,8 +71,8 @@ const Requests = () => {
                   </p>
 
                   <div className="flex gap-3">
-                    <button className="btn btn-error btn-sm">Reject</button>
-                    <button className="btn btn-success btn-sm">Accept</button>
+                    <button className="btn btn-error btn-sm" onClick={()=>reviewRequest("rejected" , request._id)}>Reject</button>
+                    <button className="btn btn-success btn-sm" onClick={()=>reviewRequest("accepted" , request._id)}>Accept</button>
                   </div>
                 </div>
               </div>

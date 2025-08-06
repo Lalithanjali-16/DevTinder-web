@@ -23,3 +23,4 @@
 - Edit profile ,Save profile
 - Page to see all connections
 - Page to see requests received
+- Accept or reject connection request

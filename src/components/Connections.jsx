@@ -50,7 +50,7 @@ const Connections = () => {
                   {firstName} {lastName}
                 </p>
                 <p className='text-sm text-gray-600 dark:text-gray-300'>
-                  {gender}, Age: {age} — {about.length > 70 ? about.slice(0, 70) + '...' : about}
+                  {gender}, Age: {age} — {about.length > 80 ? about.slice(0, 80) + '...' : about}
                 </p>
               </div>
             </div>

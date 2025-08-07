@@ -37,7 +37,11 @@ const NavBar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="User photo"
-                    src={user.photoUrl}
+                    src={
+                        user.photoUrl?.startsWith('http')
+                          ? user.photoUrl
+                          : `${BASE_URL}${user.photoUrl}`
+                      }
                   />
                 </div>
               </div>

@@ -1,7 +1,21 @@
+import axios from 'axios'
 import React from 'react'
+import { BASE_URL } from '../utils/constants'
 
 const UserCard = ({ user }) => {
-  console.log(user)
+
+  const handleSendRequest = async(status , userId) => {
+    try{
+      const res = await axios.post(
+        BASE_URL + "/request/send/" + status + "/" + userId,{} ,{
+        withCredentials : true
+      }
+      )
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
   return (
     <div>
       <div className="card bg-base-300 w-96 shadow-sm">

@@ -24,6 +24,8 @@ const Feed = () => {
   useEffect(()=>{
     getFeed();
   },[])
+  if(!feed)return;
+  if(feed.length ===0) return <h2 className="text-center mt-10">No users found</h2>
   return (
   <>
     {feed && (
